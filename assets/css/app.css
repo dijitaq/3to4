@@ -8188,6 +8188,8 @@ p {
     margin-bottom: 0;
     display: inline-block; }
     #main-navigation ul li {
+      margin-left: 15px;
+      margin-right: 15px;
       float: left;
       list-style-type: none; }
       #main-navigation ul li a {
@@ -8195,9 +8197,25 @@ p {
         font-size: 24px;
         color: #e65735;
         text-transform: uppercase;
-        padding-left: 15px;
-        padding-right: 15px;
-        display: block; }
+        display: block;
+        position: relative; }
+        #main-navigation ul li a.is-active:before, #main-navigation ul li a:hover:before {
+          width: 100%;
+          left: 0;
+          right: auto; }
+        #main-navigation ul li a:before {
+          content: "";
+          background-color: #e65735;
+          width: 0;
+          height: 1px;
+          display: block;
+          position: absolute;
+          left: auto;
+          right: 0;
+          bottom: 4px;
+          transition-delay: 0;
+          transition-duration: 0.5s;
+          transition-property: all; }
 
 #off-canvas-navigation ul {
   display: inline-block; }
@@ -8287,18 +8305,18 @@ p {
   #our-story h2 {
     font-size: 56px; }
 
-#the-team {
+#our-team {
   background-color: #e5eae3;
   width: 100%;
   padding-top: 85px;
   padding-bottom: 96px; }
-  #the-team h2 {
+  #our-team h2 {
     font-size: 56px; }
-  #the-team #team-slider {
+  #our-team #team-slider {
     background-color: #fefefe;
     margin-left: -10px;
     margin-right: -10px; }
-    #the-team #team-slider button {
+    #our-team #team-slider button {
       background-color: rgba(254, 254, 254, 0.8);
       width: 32px;
       height: 32px;
@@ -8309,22 +8327,22 @@ p {
       border: 1px solid #0a0a0a;
       border-radius: 50%;
       z-index: 99; }
-      #the-team #team-slider button.slick-prev {
+      #our-team #team-slider button.slick-prev {
         left: 15px; }
-      #the-team #team-slider button.slick-next {
+      #our-team #team-slider button.slick-next {
         right: 15px; }
-  #the-team #team-slider-control {
+  #our-team #team-slider-control {
     margin-left: -15px;
     margin-right: -15px;
     margin-top: 5px;
     margin-bottom: 0;
     list-style-type: none; }
-    #the-team #team-slider-control li {
+    #our-team #team-slider-control li {
       width: 25%;
       padding-left: 5px;
       padding-right: 5px;
       float: left; }
-      #the-team #team-slider-control li a {
+      #our-team #team-slider-control li a {
         background-color: #fefefe;
         width: 100%;
         display: block; }
