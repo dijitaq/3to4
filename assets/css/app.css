@@ -8132,7 +8132,8 @@ a.thumbnail {
 
 /* ========== START WEBSITE STYLES ==========  */
 body {
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  color: #0a0a0a; }
 
 h1, h2, h3 {
   font-family: "bebas_neuebold"; }
@@ -8214,10 +8215,11 @@ p {
 #what-we-do {
   background-color: #e5eae3;
   width: 100%;
-  padding-top: 64px; }
+  padding-top: 88px; }
   #what-we-do .tab-container {
     background-color: #e65735;
     width: 100%;
+    margin-top: 56px;
     padding-top: 48px;
     padding-bottom: 48px; }
   #what-we-do .tabs {
@@ -8274,11 +8276,81 @@ p {
 #customer {
   background-color: #e5eae3;
   width: 100%;
-  padding-top: 64px; }
+  min-height: 100vh;
+  padding-top: 88px; }
 
 #our-story {
   background-color: #e5eae3;
   width: 100%;
-  padding-top: 64px; }
+  min-height: 100vh;
+  padding-top: 85px; }
+  #our-story h2 {
+    font-size: 56px; }
+
+#the-team {
+  background-color: #e5eae3;
+  width: 100%;
+  padding-top: 85px;
+  padding-bottom: 96px; }
+  #the-team h2 {
+    font-size: 56px; }
+  #the-team #team-slider {
+    background-color: #fefefe;
+    margin-left: -10px;
+    margin-right: -10px; }
+    #the-team #team-slider button {
+      background-color: rgba(254, 254, 254, 0.8);
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+      border: 1px solid #0a0a0a;
+      border-radius: 50%;
+      z-index: 99; }
+      #the-team #team-slider button.slick-prev {
+        left: 15px; }
+      #the-team #team-slider button.slick-next {
+        right: 15px; }
+  #the-team #team-slider-control {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    list-style-type: none; }
+    #the-team #team-slider-control li {
+      width: 25%;
+      padding-left: 5px;
+      padding-right: 5px;
+      float: left; }
+      #the-team #team-slider-control li a {
+        background-color: #fefefe;
+        width: 100%;
+        display: block; }
+
+#contact-us {
+  background-color: #4c555a;
+  width: 100%;
+  padding-top: 85px;
+  padding-bottom: 96px; }
+  #contact-us h2 {
+    font-size: 56px;
+    color: #fefefe; }
+  #contact-us form [type="text"], #contact-us form [type="email"], #contact-us form textarea {
+    border: 1px solid #fefefe;
+    box-shadow: none; }
+  #contact-us form textarea {
+    height: 200px; }
+  #contact-us form button, #contact-us form [type="button"] {
+    color: #fefefe;
+    text-transform: uppercase;
+    background-color: #4c555a;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid #fefefe;
+    cursor: pointer; }
 
 /* ========== START WEBSITE STYLES ==========  */
