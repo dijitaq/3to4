@@ -1,4 +1,5 @@
 @import 'util/breakpoint';
+@import 'settings';
 @import 'typography';
 
 @mixin style {
@@ -6,6 +7,217 @@
 
 body {
 	font-family: $lato;
+}
+
+h1, h2, h3 {
+	font-family: $bebas_bold;
+}
+
+h2 {
+	color: $orange;
+	line-height: 1.1;
+}
+
+p {
+	font-family: $lato;
+}
+
+
+
+// MAIN HEADER
+#main-header {
+	background-color: $white;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+
+
+// HERO IMAGE
+#hero-image {
+	background-color: $cream;
+	width: 100%;
+	height: 100vh;
+	padding-top: 80px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	
+	.background-image {
+		background-color: $white;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		flex: 1;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-content: center;
+	}
+}
+
+
+
+// MAIN NAVIGATION
+#main-navigation {
+	margin-top: 36px;
+	margin-bottom: -1px;
+	
+	ul {
+		margin-left: 0;
+		margin-bottom: 0;
+		display: inline-block;
+		
+		li {
+			float: left;
+			list-style-type: none;
+			
+			a {
+				font-family: $bebas_bold;
+				font-size: 24px;
+				color: $orange;
+				text-transform: uppercase;
+				padding-left: 15px;
+				padding-right: 15px;
+				display: block;
+			}
+		}
+	}
+}
+
+// OFF-CANVAS NAVIGATION
+#off-canvas-navigation {
+	ul {
+		display: inline-block;
+		
+		li {
+			float: left;
+			list-style-type: none;
+			
+			a {
+				font-family: $bebas_bold;
+				color: $orange;
+				text-transform: uppercase;
+				padding-left: 15px;
+				padding-right: 15px;
+				display: block;
+			}
+		}
+	}
+}
+
+
+
+// WHAT WE DO
+#what-we-do {
+	background-color: $cream;
+	width: 100%;
+	padding-top: 64px;
+	
+	.tab-container {
+		background-color: $orange;
+		width: 100%;
+		padding-top: 48px;
+		padding-bottom: 48px;
+	}
+	
+	.tabs {
+		background-color: transparent;
+		margin-left: -15px;
+		margin-right: -15px;
+		padding: 0;
+		border: none;
+		
+		.tabs-title {
+			width: 25%;
+			padding-left: 15px;
+			padding-right: 15px;
+			float: left;
+			border: none;
+			
+			&.is-active {
+				a {
+					border: none;
+				}
+			}
+			
+			a {
+				font-family: $bebas_bold;
+				font-size: 24px;
+				color: $orange;
+				text-align: center;
+				background-color: $cream;
+				display: block;
+				border: none;
+			}
+		}
+	}
+	
+	.tabs-content {
+		background-color: transparent;
+		margin-left: -15px;
+		margin-right: -15px;
+		border: none;
+		
+		.tabs-panel {
+			background-color: transparent;
+			width: 25%;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 0;
+			padding-bottom: 0;
+			
+			&:nth-child(1) {
+				margin-left: 0;
+			}
+			
+			&:nth-child(2) {
+				margin-left: 25%;
+			}
+			
+			&:nth-child(3) {
+				margin-left: 50%;
+			}
+			
+			&:nth-child(4) {
+				margin-left: 75%;
+			}
+			
+			.box {
+				background-color: $cream;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 16px;
+				padding-bottom: 16px;
+				
+				p {
+					color: $orange;
+				}
+			}
+		}
+	}
+}
+
+
+
+// CUSTOMER
+#customer {
+	background-color: $cream;
+	width: 100%;
+	padding-top: 64px;
+}
+
+
+
+// CUSTOMER
+#our-story {
+	background-color: $cream;
+	width: 100%;
+	padding-top: 64px;
 }
 
 /* ========== START WEBSITE STYLES ==========  */

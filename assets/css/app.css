@@ -14,19 +14,19 @@
 
 @font-face {
   font-family: 'bebas_neueregular';
-  src: url("assets/webfonts/bebasneue_regular-webfont.woff2") format("woff2"), url("assets/webfonts/bebasneue_regular-webfont.woff") format("woff");
+  src: url("../webfonts/bebasneue_regular-webfont.woff2") format("woff2"), url("../webfonts/bebasneue_regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'bebas_neuelight';
-  src: url("assets/webfonts/bebasneue_light-webfont.woff2") format("woff2"), url("assets/webfonts/bebasneue_light-webfont.woff") format("woff");
+  src: url("../webfonts/bebasneue_light-webfont.woff2") format("woff2"), url("../webfonts/bebasneue_light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'bebas_neuebold';
-  src: url("assets/webfonts/bebasneue_bold-webfont.woff2") format("woff2"), url("assets/webfonts/bebasneue_bold-webfont.woff") format("woff");
+  src: url("../webfonts/bebasneue_bold-webfont.woff2") format("woff2"), url("../webfonts/bebasneue_bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -8133,5 +8133,152 @@ a.thumbnail {
 /* ========== START WEBSITE STYLES ==========  */
 body {
   font-family: "Lato", sans-serif; }
+
+h1, h2, h3 {
+  font-family: "bebas_neuebold"; }
+
+h2 {
+  color: #e65735;
+  line-height: 1.1; }
+
+p {
+  font-family: "Lato", sans-serif; }
+
+#main-header {
+  background-color: #fefefe;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #f2f2f2; }
+
+#hero-image {
+  background-color: #e5eae3;
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative; }
+  #hero-image .background-image {
+    background-color: #fefefe;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -ms-flex: 1;
+        flex: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center; }
+
+#main-navigation {
+  margin-top: 36px;
+  margin-bottom: -1px; }
+  #main-navigation ul {
+    margin-left: 0;
+    margin-bottom: 0;
+    display: inline-block; }
+    #main-navigation ul li {
+      float: left;
+      list-style-type: none; }
+      #main-navigation ul li a {
+        font-family: "bebas_neuebold";
+        font-size: 24px;
+        color: #e65735;
+        text-transform: uppercase;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: block; }
+
+#off-canvas-navigation ul {
+  display: inline-block; }
+  #off-canvas-navigation ul li {
+    float: left;
+    list-style-type: none; }
+    #off-canvas-navigation ul li a {
+      font-family: "bebas_neuebold";
+      color: #e65735;
+      text-transform: uppercase;
+      padding-left: 15px;
+      padding-right: 15px;
+      display: block; }
+
+#what-we-do {
+  background-color: #e5eae3;
+  width: 100%;
+  padding-top: 64px; }
+  #what-we-do .tab-container {
+    background-color: #e65735;
+    width: 100%;
+    padding-top: 48px;
+    padding-bottom: 48px; }
+  #what-we-do .tabs {
+    background-color: transparent;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 0;
+    border: none; }
+    #what-we-do .tabs .tabs-title {
+      width: 25%;
+      padding-left: 15px;
+      padding-right: 15px;
+      float: left;
+      border: none; }
+      #what-we-do .tabs .tabs-title.is-active a {
+        border: none; }
+      #what-we-do .tabs .tabs-title a {
+        font-family: "bebas_neuebold";
+        font-size: 24px;
+        color: #e65735;
+        text-align: center;
+        background-color: #e5eae3;
+        display: block;
+        border: none; }
+  #what-we-do .tabs-content {
+    background-color: transparent;
+    margin-left: -15px;
+    margin-right: -15px;
+    border: none; }
+    #what-we-do .tabs-content .tabs-panel {
+      background-color: transparent;
+      width: 25%;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 0;
+      padding-bottom: 0; }
+      #what-we-do .tabs-content .tabs-panel:nth-child(1) {
+        margin-left: 0; }
+      #what-we-do .tabs-content .tabs-panel:nth-child(2) {
+        margin-left: 25%; }
+      #what-we-do .tabs-content .tabs-panel:nth-child(3) {
+        margin-left: 50%; }
+      #what-we-do .tabs-content .tabs-panel:nth-child(4) {
+        margin-left: 75%; }
+      #what-we-do .tabs-content .tabs-panel .box {
+        background-color: #e5eae3;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 16px;
+        padding-bottom: 16px; }
+        #what-we-do .tabs-content .tabs-panel .box p {
+          color: #e65735; }
+
+#customer {
+  background-color: #e5eae3;
+  width: 100%;
+  padding-top: 64px; }
+
+#our-story {
+  background-color: #e5eae3;
+  width: 100%;
+  padding-top: 64px; }
 
 /* ========== START WEBSITE STYLES ==========  */
