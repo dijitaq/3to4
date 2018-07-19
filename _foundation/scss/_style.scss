@@ -304,6 +304,12 @@ p {
 	}
 	
 	form {
+		&.sending {
+			i {
+				display: inline-block !important;
+			}
+		}
+		
 		[type="text"], [type="email"], textarea {
 			border: 1px solid $white;
 			box-shadow: none;
@@ -323,6 +329,11 @@ p {
 			padding-bottom: 7px;
 			border: 1px solid $white;
 			cursor: pointer;
+			
+			i {
+				margin-right: 10px;
+				display: none !important;
+			}
 		}
 	}
 }

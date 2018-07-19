@@ -8337,6 +8337,8 @@ p {
   #contact-us h2 {
     font-size: 56px;
     color: #fefefe; }
+  #contact-us form.sending i {
+    display: inline-block !important; }
   #contact-us form [type="text"], #contact-us form [type="email"], #contact-us form textarea {
     border: 1px solid #fefefe;
     box-shadow: none; }
@@ -8352,5 +8354,8 @@ p {
     padding-bottom: 7px;
     border: 1px solid #fefefe;
     cursor: pointer; }
+    #contact-us form button i, #contact-us form [type="button"] i {
+      margin-right: 10px;
+      display: none !important; }
 
 /* ========== START WEBSITE STYLES ==========  */
