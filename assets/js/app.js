@@ -6,26 +6,90 @@ $(document).ready(function(){
 		nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
 	});
 	
-	/* our partners scene
-	var our_partners_controller = new ScrollMagic.Controller();
-		
-	var our_partners_scene = new ScrollMagic.Scene({
-		triggerElement: "#our-partners",
+	// what we do section
+	var scene_1_controller = new ScrollMagic.Controller();
+	var scene_1 = new ScrollMagic.Scene({
+		triggerElement: '#what-we-do',
 		//triggerHook: "onEnter",
 		duration: "100%"
-		
+	})
+	//.addIndicators()
+	.on("enter", function(){
+		$('#what-we-do').addClass('is-in-view');
+	})
+	.addTo(scene_1_controller);
+	
+	// customer section
+	var scene_2_controller = new ScrollMagic.Controller();
+	var scene_2 = new ScrollMagic.Scene({
+		triggerElement: '#customer',
+		//triggerHook: "onEnter",
+		duration: "100%"
+	})
+	//.addIndicators()
+	.on("enter", function(){
+		$('#customer').addClass('is-in-view');
+	})
+	.addTo(scene_2_controller);
+	
+	// our story section
+	var scene_3_controller = new ScrollMagic.Controller();
+	var scene_3 = new ScrollMagic.Scene({
+		triggerElement: '#our-story',
+		//triggerHook: "onEnter",
+		duration: "100%"
+	})
+	//.addIndicators()
+	.on("enter", function(){
+		$('#our-story').addClass('is-in-view');
+	})
+	.addTo(scene_3_controller);
+	
+	// our team section
+	var scene_4_controller = new ScrollMagic.Controller();
+	var scene_4 = new ScrollMagic.Scene({
+		triggerElement: '#our-team',
+		//triggerHook: "onEnter",
+		duration: "100%"
+	})
+	//.addIndicators()
+	.on("enter", function(){
+		$('#our-team').addClass('is-in-view');
+	})
+	.addTo(scene_4_controller);
+	
+	// our partners section
+	var scene_5_controller = new ScrollMagic.Controller();
+	var scene_5 = new ScrollMagic.Scene({
+		triggerElement: '#our-partners',
+		//triggerHook: "onEnter",
+		duration: "100%"
 	})
 	//.addIndicators()
 	.on("enter", function(){
 		$('#our-partners').addClass('is-in-view');
 	})
-	.addTo(our_partners_controller);*/
+	.addTo(scene_5_controller);
 	
+	// contact us section
+	var scene_6_controller = new ScrollMagic.Controller();
+	var scene_6 = new ScrollMagic.Scene({
+		triggerElement: '#contact-us',
+		//triggerHook: "onEnter",
+		duration: "100%"
+	})
+	//.addIndicators()
+	.on("enter", function(){
+		$('#contact-us').addClass('is-in-view');
+	})
+	.addTo(scene_6_controller);
+	
+	// partners section
 	if ($('.logos').length > 0) {
 		$('.logos').each(function(){
 			var element = $(this).attr('id');
 		
-			var controller = new ScrollMagic.Controller()
+			var controller = new ScrollMagic.Controller();
 			
 			var scene = new ScrollMagic.Scene({
 				triggerElement: '#' + element,
