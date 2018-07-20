@@ -8206,15 +8206,12 @@ p {
 
 .share-navigation {
   margin-left: 0;
-  margin-top: 46px;
   display: inline-block;
   list-style-type: none; }
   .share-navigation li {
     margin-left: 15px;
     margin-right: 15px;
     float: left; }
-    .share-navigation li a {
-      color: rgba(254, 254, 254, 0.8); }
 
 section {
   border-top: 1px solid rgba(10, 10, 10, 0.2); }
@@ -8448,6 +8445,22 @@ section {
         left: 15px; }
       #our-team #team-slider button.slick-next {
         right: 15px; }
+    #our-team #team-slider .share-navigation {
+      margin-top: 27px; }
+      #our-team #team-slider .share-navigation li a {
+        color: #fefefe;
+        background-color: #4c555a;
+        width: 40px;
+        height: 40px;
+        display: block;
+        border-radius: 50%;
+        position: relative; }
+        #our-team #team-slider .share-navigation li a i {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
   #our-team #team-slider-control {
     margin-left: -15px;
     margin-right: -15px;
@@ -8600,5 +8613,9 @@ section {
     #contact-us form button i, #contact-us form [type="button"] i {
       margin-right: 10px;
       display: none !important; }
+  #contact-us .share-navigation {
+    margin-top: 46px; }
+    #contact-us .share-navigation li a {
+      color: rgba(254, 254, 254, 0.8); }
 
 /* ========== START WEBSITE STYLES ==========  */
