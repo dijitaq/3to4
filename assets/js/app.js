@@ -4,7 +4,41 @@ $(document).ready(function(){
 	$('#team-slider').slick({
 		prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
 		nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+	});
+	
+	/* our partners scene
+	var our_partners_controller = new ScrollMagic.Controller();
+		
+	var our_partners_scene = new ScrollMagic.Scene({
+		triggerElement: "#our-partners",
+		//triggerHook: "onEnter",
+		duration: "100%"
+		
 	})
+	//.addIndicators()
+	.on("enter", function(){
+		$('#our-partners').addClass('is-in-view');
+	})
+	.addTo(our_partners_controller);*/
+	
+	if ($('.logos').length > 0) {
+		$('.logos').each(function(){
+			var element = $(this).attr('id');
+		
+			var controller = new ScrollMagic.Controller()
+			
+			var scene = new ScrollMagic.Scene({
+				triggerElement: '#' + element,
+				//triggerHook: "onEnter",
+				duration: "100%"
+			})
+			//.addIndicators()
+			.on("enter", function(){
+				$('#' + element).addClass('is-in-view');
+			})
+			.addTo(controller);
+		});
+	}
 });
 
 $('form').submit(function(ev) {
@@ -47,4 +81,11 @@ $('form').submit(function(ev) {
 			}
         }
 	});*/
+});
+
+$('.btn-goto').on('click', function(e){
+	e.preventDefault();
+	var slide = Number($(this).attr('data-goto'));
+	
+	$('#team-slider').slick('slickGoTo', slide);
 });
