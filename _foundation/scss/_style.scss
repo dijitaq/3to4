@@ -124,7 +124,7 @@ p {
     
     
 section {
-    border-top: 1px solid rgba($black, 0.2);
+    border-top: 1px solid rgba($black, 0.1);
 }
 
 
@@ -181,7 +181,7 @@ section {
 #what-we-do {
 	background-color: $cream;
 	width: 100%;
-	padding-top: 88px;
+	padding-top: 120px;
 	
 	&.is-in-view {
 		h2 {
@@ -305,9 +305,12 @@ section {
 // CUSTOMER
 #customer {
 	background-color: $cream;
+    background-image: url(../img/lego.jpg);
+    background-position: right bottom;
+    background-repeat: no-repeat;
 	width: 100%;
-	min-height: 100vh;
-	padding-top: 88px;
+	min-height: 900px;
+	padding-top: 120px;
 	
 	&.is-in-view {
 		h2 {
@@ -356,10 +359,14 @@ section {
 
 // CUSTOMER
 #our-story {
-	background-color: $cream;
+    background-color: $cream;
+    background-image: url(../img/bottle.jpg);
+    background-position: center 128px;
+    background-repeat: no-repeat;
+    background-size: cover;
 	width: 100%;
-	min-height: 100vh;
-	padding-top: 85px;
+	min-height: calc(100vh + 480px);
+	padding-top: 117px;
 	
 	&.is-in-view {
 		h2 {
