@@ -5,6 +5,15 @@ $(document).ready(function(){
 		prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
 		nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
 	});
+    
+    // what we do section
+    var scene_0_controller = new ScrollMagic.Controller();
+	var scene_0 = new ScrollMagic.Scene({
+		triggerElement: '#hero-image',
+		triggerHook: "onLeave",
+		duration: "100%"
+	})
+	.addTo(scene_0_controller);
 	
 	// what we do section
 	var scene_1_controller = new ScrollMagic.Controller();
@@ -20,12 +29,18 @@ $(document).ready(function(){
 	.addTo(scene_1_controller);
 	
 	// customer section
+    var tween_2 = new TimelineMax()
+    .add([
+        TweenMax.to('#customer', 1, { backgroundPosition: "0 -200px", force3D:true, ease: Linear.easeNone })
+    ]);
+    
 	var scene_2_controller = new ScrollMagic.Controller();
 	var scene_2 = new ScrollMagic.Scene({
 		triggerElement: '#customer',
 		//triggerHook: "onEnter",
-		duration: "100%"
+		duration: 2000
 	})
+    .setTween(tween_2)
 	//.addIndicators()
 	.on("enter", function(){
 		$('#customer').addClass('is-in-view');
@@ -33,12 +48,18 @@ $(document).ready(function(){
 	.addTo(scene_2_controller);
 	
 	// our story section
+    var tween_3 = new TimelineMax()
+    .add([
+        TweenMax.to('#our-story', 1, { backgroundPosition: "0 -300px", force3D:true, ease: Linear.easeNone })
+    ]);
+    
 	var scene_3_controller = new ScrollMagic.Controller();
 	var scene_3 = new ScrollMagic.Scene({
 		triggerElement: '#our-story',
-		//triggerHook: "onEnter",
-		duration: "100%"
+		//triggerHook: "onLeave",
+		duration: 2000
 	})
+    .setTween(tween_3)
 	//.addIndicators()
 	.on("enter", function(){
 		$('#our-story').addClass('is-in-view');

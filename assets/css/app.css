@@ -8148,6 +8148,8 @@ p {
 #main-header {
   background-color: #fefefe;
   width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
   position: fixed;
   left: 0;
   top: 0;
@@ -8228,7 +8230,7 @@ section {
   #hero-image .background-image {
     background-color: #fefefe;
     background-image: url(../img/hero-image.jpg);
-    background-position: center center;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     -ms-flex: 1;
@@ -8285,8 +8287,8 @@ section {
   #what-we-do .tab-container {
     background-color: #e65735;
     width: 100%;
-    padding-top: 48px;
-    padding-bottom: 48px; }
+    padding-top: 96px;
+    padding-bottom: 96px; }
   #what-we-do .tabs {
     background-color: transparent;
     margin-left: -15px;
@@ -8307,8 +8309,17 @@ section {
         color: #e65735;
         text-align: center;
         background-color: #e5eae3;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 24px;
+        padding-bottom: 20px;
         display: block;
         border: none; }
+        #what-we-do .tabs .tabs-title a img {
+          margin-bottom: 19px; }
+        #what-we-do .tabs .tabs-title a span {
+          width: 100%;
+          display: block; }
   #what-we-do .tabs-content {
     background-color: transparent;
     margin-left: -15px;
@@ -8341,8 +8352,9 @@ section {
 #customer {
   background-color: #e5eae3;
   background-image: url(../img/lego.jpg);
-  background-position: right bottom;
+  background-position: 0 0;
   background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   min-height: 900px;
   padding-top: 120px; }
@@ -8378,7 +8390,7 @@ section {
 #our-story {
   background-color: #e5eae3;
   background-image: url(../img/bottle.jpg);
-  background-position: center 128px;
+  background-position: 0 256px;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -8412,8 +8424,10 @@ section {
 #our-team {
   background-color: #e5eae3;
   width: 100%;
-  padding-top: 85px;
+  padding-top: 117px;
   padding-bottom: 96px; }
+  #our-team .grid-container .grid-container {
+    padding: 0; }
   #our-team.is-in-view h2 {
     opacity: 1;
     -ms-transform: translateY(0);
@@ -8470,7 +8484,8 @@ section {
       #our-team #team-slider button.slick-next {
         right: 15px; }
     #our-team #team-slider .share-navigation {
-      margin-top: 27px; }
+      margin-top: 27px;
+      margin-bottom: 0 !important; }
       #our-team #team-slider .share-navigation li a {
         color: #fefefe;
         background-color: #4c555a;
@@ -8515,7 +8530,7 @@ section {
           z-index: 1;
           opacity: 0;
           transition-delay: 0.1s;
-          transition-duration: 0.5s;
+          transition-duration: 1s;
           transition-property: all; }
         #our-team #team-slider-control li a:hover:before {
           transition-delay: 0;
@@ -8536,15 +8551,15 @@ section {
           z-index: 2;
           opacity: 0;
           transition-delay: 0;
-          transition-duration: 0.5s;
+          transition-duration: 1s;
           transition-property: all;
           z-index: 1; }
 
 #our-partners {
   background-color: #e65735;
   width: 100%;
-  padding-top: 85px;
-  padding-bottom: 72px; }
+  padding-top: 117px;
+  padding-bottom: 48px; }
   #our-partners.is-in-view h2 {
     opacity: 1;
     -ms-transform: translateY(0);
@@ -8559,33 +8574,60 @@ section {
         transform: translateY(25px);
     transition-duration: 1s;
     transition-property: all; }
-  #our-partners .logos {
-    margin-bottom: 24px; }
-    #our-partners .logos.is-in-view .cell {
-      opacity: 1; }
-    #our-partners .logos .cell {
-      font-family: "bebas_neuebold";
-      font-size: 24px;
-      color: #fefefe;
-      opacity: 1;
-      height: 120px;
-      border: 1px solid rgba(254, 254, 254, 0.2);
-      opacity: 0;
-      transition-duration: 0.5s;
-      transition-property: all; }
-      #our-partners .logos .cell:nth-child(1) {
-        transition-delay: 0.125s; }
-      #our-partners .logos .cell:nth-child(2) {
-        transition-delay: 0.25s; }
-      #our-partners .logos .cell:nth-child(3) {
-        transition-delay: 0.375s; }
-      #our-partners .logos .cell:nth-child(4) {
-        transition-delay: 0.5s; }
+  #our-partners .logos.is-in-view .cell {
+    opacity: 1; }
+  #our-partners .logos .cell {
+    font-family: "bebas_neuebold";
+    font-size: 24px;
+    color: #fefefe;
+    margin-bottom: 48px;
+    opacity: 1;
+    opacity: 0;
+    transition-duration: 1s;
+    transition-property: all; }
+    #our-partners .logos .cell:nth-child(1) {
+      transition-delay: 0.125s; }
+    #our-partners .logos .cell:nth-child(2) {
+      transition-delay: 0.375s; }
+    #our-partners .logos .cell:nth-child(3) {
+      transition-delay: 0.625s; }
+    #our-partners .logos .cell:nth-child(4) {
+      transition-delay: 0.875s; }
+    #our-partners .logos .cell:nth-child(1) {
+      transition-delay: 1.125s; }
+    #our-partners .logos .cell:nth-child(2) {
+      transition-delay: 1.375s; }
+    #our-partners .logos .cell:nth-child(3) {
+      transition-delay: 1.625s; }
+    #our-partners .logos .cell:nth-child(4) {
+      transition-delay: 1.875s; }
+    #our-partners .logos .cell:nth-child(5) {
+      transition-delay: 2.125s; }
+    #our-partners .logos .cell:nth-child(6) {
+      transition-delay: 2.375s; }
+    #our-partners .logos .cell:nth-child(7) {
+      transition-delay: 2.625s; }
+    #our-partners .logos .cell:nth-child(8) {
+      transition-delay: 2.875s; }
+    #our-partners .logos .cell:nth-child(9) {
+      transition-delay: 3.125s; }
+    #our-partners .logos .cell:nth-child(10) {
+      transition-delay: 3.375s; }
+    #our-partners .logos .cell:nth-child(11) {
+      transition-delay: 3.625s; }
+    #our-partners .logos .cell:nth-child(12) {
+      transition-delay: 3.875s; }
+    #our-partners .logos .cell:nth-child(13) {
+      transition-delay: 4.125s; }
+    #our-partners .logos .cell:nth-child(14) {
+      transition-delay: 4.375s; }
+    #our-partners .logos .cell:nth-child(15) {
+      transition-delay: 4.625s; }
 
 #contact-us {
   background-color: #4c555a;
   width: 100%;
-  padding-top: 85px;
+  padding-top: 117px;
   padding-bottom: 96px; }
   #contact-us.is-in-view h2 {
     opacity: 1;
