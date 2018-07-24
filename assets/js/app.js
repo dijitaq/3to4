@@ -6,105 +6,106 @@ $(document).ready(function(){
 		nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
 	});
     
-    // what we do section
-    var scene_0_controller = new ScrollMagic.Controller();
-	var scene_0 = new ScrollMagic.Scene({
-		triggerElement: '#hero-image',
-		triggerHook: "onLeave",
-		duration: "100%"
-	})
-	.addTo(scene_0_controller);
-	
-	// what we do section
-	var scene_1_controller = new ScrollMagic.Controller();
-	var scene_1 = new ScrollMagic.Scene({
-		triggerElement: '#what-we-do',
-		//triggerHook: "onEnter",
-		duration: "100%"
-	})
-	//.addIndicators()
-	.on("enter", function(){
-		$('#what-we-do').addClass('is-in-view');
-	})
-	.addTo(scene_1_controller);
-	
-	// customer section
-    var tween_2 = new TimelineMax()
-    .add([
-        TweenMax.to('#customer', 1, { backgroundPosition: "0 -200px", force3D:true, ease: Linear.easeNone })
-    ]);
-    
-	var scene_2_controller = new ScrollMagic.Controller();
-	var scene_2 = new ScrollMagic.Scene({
-		triggerElement: '#customer',
-		//triggerHook: "onEnter",
-		duration: 2000
-	})
-    .setTween(tween_2)
-	//.addIndicators()
-	.on("enter", function(){
-		$('#customer').addClass('is-in-view');
-	})
-	.addTo(scene_2_controller);
-	
-	// our story section
-    var tween_3 = new TimelineMax()
-    .add([
-        TweenMax.to('#our-story', 1, { backgroundPosition: "0 -300px", force3D:true, ease: Linear.easeNone })
-    ]);
-    
-	var scene_3_controller = new ScrollMagic.Controller();
-	var scene_3 = new ScrollMagic.Scene({
-		triggerElement: '#our-story',
-		//triggerHook: "onLeave",
-		duration: 2000
-	})
-    .setTween(tween_3)
-	//.addIndicators()
-	.on("enter", function(){
-		$('#our-story').addClass('is-in-view');
-	})
-	.addTo(scene_3_controller);
-	
-	// our team section
-	var scene_4_controller = new ScrollMagic.Controller();
-	var scene_4 = new ScrollMagic.Scene({
-		triggerElement: '#our-team',
-		//triggerHook: "onEnter",
-		duration: "100%"
-	})
-	//.addIndicators()
-	.on("enter", function(){
-		$('#our-team').addClass('is-in-view');
-	})
-	.addTo(scene_4_controller);
-	
-	// our partners section
-	var scene_5_controller = new ScrollMagic.Controller();
-	var scene_5 = new ScrollMagic.Scene({
-		triggerElement: '#our-partners',
-		//triggerHook: "onEnter",
-		duration: "100%"
-	})
-	//.addIndicators()
-	.on("enter", function(){
-		$('#our-partners').addClass('is-in-view');
-	})
-	.addTo(scene_5_controller);
-	
-	// contact us section
-	var scene_6_controller = new ScrollMagic.Controller();
-	var scene_6 = new ScrollMagic.Scene({
-		triggerElement: '#contact-us',
-		//triggerHook: "onEnter",
-		duration: "100%"
-	})
-	//.addIndicators()
-	.on("enter", function(){
-		$('#contact-us').addClass('is-in-view');
-	})
-	.addTo(scene_6_controller);
-	
+    if (Foundation.MediaQuery.atLeast('large')) {
+        // what we do section
+        var scene_0_controller = new ScrollMagic.Controller();
+        var scene_0 = new ScrollMagic.Scene({
+            triggerElement: '#hero-image',
+            triggerHook: "onLeave",
+            duration: "100%"
+        })
+        .addTo(scene_0_controller);
+
+        // what we do section
+        var scene_1_controller = new ScrollMagic.Controller();
+        var scene_1 = new ScrollMagic.Scene({
+            triggerElement: '#what-we-do',
+            //triggerHook: "onEnter",
+            duration: "100%"
+        })
+        //.addIndicators()
+        .on("enter", function(){
+            $('#what-we-do').addClass('is-in-view');
+        })
+        .addTo(scene_1_controller);
+
+        // customer section
+        var tween_2 = new TimelineMax()
+        .add([
+            TweenMax.to('#customer', 1, { backgroundPosition: "right -600px", force3D:true, ease: Linear.easeNone })
+        ]);
+
+        var scene_2_controller = new ScrollMagic.Controller();
+        var scene_2 = new ScrollMagic.Scene({
+            triggerElement: '#customer',
+            //triggerHook: "onEnter",
+            duration: 2000
+        })
+        .setTween(tween_2)
+        //.addIndicators()
+        .on("enter", function(){
+            $('#customer').addClass('is-in-view');
+        })
+        .addTo(scene_2_controller);
+
+        // our story section
+        var tween_3 = new TimelineMax()
+        .add([
+            TweenMax.to('#our-story', 1, { backgroundPosition: "0 -300px", force3D:true, ease: Linear.easeNone })
+        ]);
+
+        var scene_3_controller = new ScrollMagic.Controller();
+        var scene_3 = new ScrollMagic.Scene({
+            triggerElement: '#our-story',
+            //triggerHook: "onLeave",
+            duration: 2000
+        })
+        .setTween(tween_3)
+        //.addIndicators()
+        .on("enter", function(){
+            $('#our-story').addClass('is-in-view');
+        })
+        .addTo(scene_3_controller);
+
+        // our team section
+        var scene_4_controller = new ScrollMagic.Controller();
+        var scene_4 = new ScrollMagic.Scene({
+            triggerElement: '#our-team',
+            //triggerHook: "onEnter",
+            duration: "100%"
+        })
+        //.addIndicators()
+        .on("enter", function(){
+            $('#our-team').addClass('is-in-view');
+        })
+        .addTo(scene_4_controller);
+
+        // our partners section
+        var scene_5_controller = new ScrollMagic.Controller();
+        var scene_5 = new ScrollMagic.Scene({
+            triggerElement: '#our-partners',
+            //triggerHook: "onEnter",
+            duration: "100%"
+        })
+        //.addIndicators()
+        .on("enter", function(){
+            $('#our-partners').addClass('is-in-view');
+        })
+        .addTo(scene_5_controller);
+
+        // contact us section
+        var scene_6_controller = new ScrollMagic.Controller();
+        var scene_6 = new ScrollMagic.Scene({
+            triggerElement: '#contact-us',
+            //triggerHook: "onEnter",
+            duration: "100%"
+        })
+        //.addIndicators()
+        .on("enter", function(){
+            $('#contact-us').addClass('is-in-view');
+        })
+        .addTo(scene_6_controller);
+    }
 	// partners section
 	if ($('.logos').length > 0) {
 		$('.logos').each(function(){
@@ -126,6 +127,11 @@ $(document).ready(function(){
 	}
 });
 
+$('#what-we-do-content').on('replaced.zf.interchange', function(){
+    $(document).foundation();
+});
+
+//
 $('form').submit(function(ev) {
 	ev.preventDefault();
 	
