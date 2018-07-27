@@ -1,0 +1,144 @@
+<div class="grid-x grid-margin-x">
+    <div class="cell large-10 large-offset-1">
+        <h2>The Team</h2>
+
+        <p><strong>Three to four specialists who have a passion for creating and delivering work that works.</strong><br>As part of our structure we always have the 3 key leads working together, every step of the way to ensure the success of a campaign is as great as it can be. We have an in-house design and production department that works collaboratively with our account managers and producers to make sure projects happen seamlessly.</p>
+    </div>
+</div>
+
+<div class="grid-x grid-margin-x">
+    <div class="cell large-12">
+        <ul id="team-slider-control" class="clearfix">
+            <li>
+                <a class="btn-goto" data-goto="0">
+                    <img src="assets/img/profile-sandy.jpg">
+
+                    <p>Sandy Rudd<br>Creative</p>
+                </a>
+            </li>
+
+            <li>
+                <a class="btn-goto" data-goto="1">
+                    <img src="assets/img/profile-matt.jpg">
+
+                    <p>Matt Rudd<br>Creative</p>
+                </a>
+            </li>
+
+            <li>
+                <a class="btn-goto" data-goto="2">
+                    <img src="assets/img/profile-steve.jpg">
+
+                    <p>Steve<br>Media</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="cell large-12">
+        <div id="team-slider">
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell xsmall-10 xsmall-offset-1 large-5 xlarge-6">
+                        <p><strong>SANDY RUDD<br>Partner - Creative Strategy.</strong><br>Sandy’s expertise extends 20 years, working for multi-national and local agencies in an integrated capacity on a diverse range of disciplines including: Creative Strategy, Digital, UX, Direct Marketing and digital.  A highly ‘awarded’ creative, her expertise includes creative business strategy, marketing, brand management, social and technology services. Sandy has also had hands-on management experience in creative &amp; innovation industries and sits on the board of directors for tech company, Wundar. and is also a member of the Australian China Business Council.</p>
+
+                        <div class="text-center">
+                            <ul class="share-navigation">
+                                <li>
+                                    <a>
+                                        <i class="fab fa-linkedin-in fa-lg"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a>
+                                        <i class="fab fa-twitter fa-lg"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cell large-6 xlarge-5 hide-for-xsmall hide-for-small-only hide-for-medium-only">
+                        <img src="assets/img/profile-sandy.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell xsmall-10 xsmall-offset-1 large-5 xlarge-6">
+                        <p><strong>MATT RUDD<br>Creative / UX Specialist.</strong><br>Matt has been in the industry for over 15 years working as a creative for agencies such as BMF, Lowe Hunt and Leo Burnett. A consistently awarded creative for both creative and effectiveness at ADMA, Caples, Echo's and Cannes. For the last three years he has headed up the creative and UX department of Agency3  in an integrated capacity. Helping brands  such as Commbank, Lion Nathan, Meat and Live stock, The Optical Company and Energus solve business problems creatively.</p>
+
+                         <div class="text-center">
+                            <ul class="share-navigation">
+                                <li>
+                                    <a>
+                                        <i class="fab fa-linkedin-in fa-lg"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a>
+                                        <i class="fab fa-twitter fa-lg"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cell large-6 xlarge-5 hide-for-xsmall hide-for-small-only hide-for-medium-only">
+                        <img src="assets/img/profile-matt.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell xsmall-10 xsmall-offset-1 large-5 xlarge-6">
+                        <p><strong>STEVE<br>Partner - Media.</strong><br>With over 15 year’s experience within the media industry Steve has extensive knowledge and understanding of how to get the best results from media campaigns. Working with all types of businesses from a wide range of sectors to help them achieve their marketing goals. Steve’s client list includes Air Vanuatu, New Caledonia and Sydney VW.</p>
+
+                         <div class="text-center">
+                            <ul class="share-navigation">
+                                <li>
+                                    <a>
+                                        <i class="fab fa-linkedin-in fa-lg"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a>
+                                        <i class="fab fa-twitter fa-lg"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cell large-6 xlarge-5 hide-for-xsmall hide-for-small-only hide-for-medium-only">
+                        <img src="assets/img/profile-steve.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$('#team-slider').slick({
+    prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+});
+
+$('.btn-goto').on('click, touchstart', function(e) {
+    e.preventDefault();
+    
+	var slide = Number($(this).attr('data-goto'));
+	
+	$('#team-slider').slick('slickGoTo', slide);
+    
+    $(this).closest('ul').children().removeClass('is-active');
+    
+    $(this).parent().addClass('is-active');
+});
+</script>

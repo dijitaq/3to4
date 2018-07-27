@@ -1,0 +1,150 @@
+<ul class="tabs clearfix" id="what-we-do-tabs">
+    <li class="tabs-title">
+        <a class="button-trigger" href="#what-we-do-strategy">
+            <img src="assets/img/icon-strategy.png">
+
+            <span>Strategy</span>
+        </a>
+    </li>
+
+    <li class="tabs-title">
+        <a class="button-trigger" href="#what-we-do-creative">
+            <img src="assets/img/icon-creative.png">
+
+            <span>Creative</span>
+        </a>
+    </li>
+
+    <li class="tabs-title">
+        <a class="button-trigger" href="#what-we-do-insights">
+            <img src="assets/img/icon-insights.png">
+
+            <span>Insights</span>
+        </a>
+    </li>
+
+    <li class="tabs-title">
+        <a class="button-trigger" href="#what-we-do-media">
+            <img src="assets/img/icon-media.png">
+
+            <span>Media</span>
+        </a>
+    </li>
+</ul>
+
+<div class="accordion-container" data-equalizer>
+    <ul id="what-we-do-strategy" class="accordion clearfix" data-accordion data-allow-all-closed="true">
+        <li class="accordion-item" data-accordion-item>
+            <div class="accordion-content" data-tab-content>
+                <div class="box" data-equalizer-watch>
+                    <p>Brand Strategy<br>
+                    Campaign<br>
+                    Retail path to purchase<br>
+                    Digital Strategy<br>
+                    Social Engagement Strategy<br>
+                    Customer Insight<br>
+                    CRM<br>
+                    Customer journey<br>
+                    Content acquisition and retention<br>
+                    e-Commerce</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+    <ul id="what-we-do-creative" class="accordion clearfix" data-accordion data-allow-all-closed="true">
+        <li class="accordion-item" data-accordion-item>
+            <div class="accordion-content" data-tab-content>
+                <div class="box" data-equalizer-watch>
+                    <p>Branding<br>
+                    Integrated Campaigns<br>
+                    Direct Marketing<br>
+                    Digital Marketing<br>
+                    Social<br>
+                    TV<br>
+                    Print<br>
+                    Outdoor<br>
+                    Radio<br>
+                    Experiential<br>
+                    UX<br>
+                    b2b/b2c marketing<br>
+                    Website<br>
+                    App Development</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+    <ul id="what-we-do-insights" class="accordion clearfix" data-accordion data-allow-all-closed="true">
+        <li class="accordion-item" data-accordion-item>
+            <div class="accordion-content" data-tab-content>
+                <div class="box" data-equalizer-watch>
+                    <p>Analytics<br>
+                    CRM Analysis<br>
+                    Seo Optimisation<br>
+                    Website Analysis<br>
+                    Performance Measurement<br>
+                    ROI<br>
+                    Data</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+    <ul id="what-we-do-media" class="accordion clearfix" data-accordion data-allow-all-closed="true">
+        <li class="accordion-item" data-accordion-item>
+            <div class="accordion-content" data-tab-content>
+                <div class="box" data-equalizer-watch>
+                    <p><strong>Broadcast</strong><br>
+                    TV&nbsp;&bull;&nbsp;Radio&nbsp;&bull;&nbsp;Cinema&nbsp;&bull;&nbsp;<br>
+                    Video On Demand<br>
+                    Streaming</p>
+                    <p><strong>OOH</strong><br>
+                    Billboards&nbsp;&bull;&nbsp;Roadside<br>
+                    Train Stations&nbsp;&bull;&nbsp;Transport<br>
+                    Ad vans&nbsp;&bull;&nbsp;Ambient</p>
+                    <p><strong>Digital</strong><br>
+                    Social&nbsp;&bull;&nbsp;PPC&nbsp;&bull;&nbsp;Display&nbsp;&bull;&nbsp;Mobile<br>
+                    Video&nbsp;&bull;&nbsp;Podcasting<br>
+                    Native&nbsp;&bull;&nbsp;Programmatic</p>
+                    <p><strong>Print Media</strong><br>
+                    National press&nbsp;&bull;&nbsp;Regional press<br>
+                    Trade&nbsp;&bull;&nbsp;Consumer magazine</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<script>
+var start = false;
+    
+$('#what-we-do-content').on('replaced.zf.interchange', function(){
+    $('.accordion-container').on('postequalized.zf.equalizer', function() {
+        $('.accordion-container').addClass('is-activated');
+        
+        $('.accordion').each(function() {
+            var id = $(this).attr('id');
+            
+            new Foundation.Accordion($('#' + id));
+        });
+        
+        $('.accordion-container').removeAttr('data-equalizer').removeAttr('data-resize').removeAttr('data-mutate');
+    });
+    
+    if (!start) {
+        new Foundation.Equalizer($('.accordion-container'));
+    }
+                            
+    start= true;
+});
+    
+ $('.button-trigger').on('click touchstart', function(e) {
+    e.preventDefault();
+
+    var id = $(this).attr('href');
+    
+    $(id).foundation('down', $(id).find('.accordion-content'), true);
+     
+    $('.accordion:not(' + id + ')').foundation('up', $('.accordion:not(' + id + ')').find('.accordion-content'));
+});
+</script>

@@ -23,10 +23,10 @@
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
     </head>
     
-    <body data-magellan>
+    <body>
 	    <div class="off-canvas-wrapper">
 		    <div class="off-canvas position-right" id="off-canvas" data-off-canvas>
-			    <nav id="off-canvas-navigation">
+			    <nav id="off-canvas-navigation" data-magellan>
 				    <ul>
 					    <li>
 					    	<a href="#what-we-do">What We Do</a>
@@ -38,6 +38,10 @@
 					    
 					    <li>
 					    	<a href="#our-team">Our Team</a>
+					    </li>
+                        
+                        <li>
+					    	<a href="#brand-experience">Brand Experience</a>
 					    </li>
 					    
 					    <li>
@@ -52,15 +56,15 @@
 				    <div class="grid-container">
 					    <div class="grid-x">
 						    <div class="cell xsmall-12 medium-2 text-center medium-text-left">
-							    <img src="assets/img/logo-3to4-orange.png">
+                                <a href="#hero-image"><img src="assets/img/logo-3to4-orange.png"></a>
                                 
-                                <button class="hide-for-medium">
+                                <button class="hide-for-large" data-toggle="off-canvas">
                                     <i class="fas fa-bars fa-lg"></i>
                                 </button>
 						    </div>
 						    
-						    <div class="cell medium-10 medium-text-right large-text-left hide-for-xsmall hide-for-small-only">
-							    <nav id="main-navigation">
+						    <div class="cell medium-10 medium-text-right large-text-left hide-for-xsmall hide-for-small-only hide-for-medium-only">
+							    <nav id="main-navigation" data-magellan>
 								    <ul>
 									    <li>
 									    	<a href="#what-we-do">What We Do</a>
@@ -73,6 +77,10 @@
 									    <li>
 									    	<a href="#our-team">Our Team</a>
 									    </li>
+                                        
+                                        <li>
+                                            <a href="#brand-experience">Brand Experience</a>
+                                        </li>
 									    
 									    <li>
 									    	<a href="#contact-us">Contact Us</a>
@@ -85,12 +93,14 @@
 			    </header>
 			    
 			    <section id="hero-image" data-magellan-target="home">
-				    <div class="background-image" data-interchange="[assets/img/hero-image-small.jpg, xsmall], [assets/img/hero-image-small.jpg, small], [assets/img/hero-image-medium.jpg, medium], [assets/img/hero-image-large.jpg, large], [assets/img/hero-image-large.jpg, xlarge], [assets/img/hero-image-large.jpg, xxlarge]">
-                        <div class="grid-x align-center">
-                            <div class="container clearfix">
-                                <img src="assets/img/logo-3to4-white.png">
-                                
-                                <p>We use Intelligent<br>Advertising to turn<br>consumers into<br>customers for<br>Brands.</p>
+				    <div class="background-image" data-interchange="[assets/img/hero-image-small.jpg, xsmall], [assets/img/hero-image-small.jpg, small], [assets/img/hero-image-medium.jpg, medium], [assets/img/hero-image-large.jpg, large], [assets/img/hero-image-xlarge.jpg, xlarge], [assets/img/hero-image-xxlarge.jpg, xxlarge], [assets/img/hero-image-xxxlarge.jpg, xxxlarge]">
+                        <div class="grid-x">
+                            <div class="container">
+                                <div class="box clearfix">
+                                    <img data-interchange="[assets/img/logo-3to4-white-xsmall.png, xsmall], [assets/img/logo-3to4-white-xsmall.png, small], [assets/img/logo-3to4-white-medium.png, medium], [assets/img/logo-3to4-white-medium.png, large], [assets/img/logo-3to4-white-medium.png, xlarge], [assets/img/logo-3to4-white-medium.png, xxlarge], [assets/img/logo-3to4-white-medium.png, xxxlarge]">
+
+                                    <p>WE TURN CONSUMERS<br>INTO CUSTOMERS<br>FOR BRANDS WITH<br>INTELLIGENT ADVERTISING</p>
+                                </div>
                             </div>
                         </div>
 				    </div>
@@ -100,7 +110,7 @@
 				    <div class="grid-container">
 					    <div class="grid-x grid-margin-x">
 						    <div class="cell xsmall-12 large-7">
-							    <h2><span>Creatively led, strategically clever,</span><br><span>powered by great data, analytics and media </span><br><span>to deliver outstanding roi</span></h2>
+							    <h2><span>STRATEGICALLY CLEVER, CREATIVELY LED, POWERED BY INTELLIGENT DATA, ANALYTICS AND MEDIA TO DELIVER OUTSTANDING ROI.</span></h2>
 						    </div>
 					    </div>
 				    </div>
@@ -108,7 +118,7 @@
 				    <div class="tab-container">
 					    <div class="grid-container">
                             <div class="grid-x">
-                                <div id="what-we-do-content" class="cell" data-interchange="[accordion-what-we-do.html, xsmall], [accordion-what-we-do.html, small], [tabs-what-we-do.html, large], [tabs-what-we-do.html, xlarge], [tabs-what-we-do.html, xxlarge]">
+                                <div id="what-we-do-content" class="cell" data-interchange="[what-we-do-xsmall.html, xsmall], [what-we-do-xsmall.html, small], [what-we-do-xsmall.html, medium], [what-we-do-large.html, large], [what-we-do-large.html, xlarge], [what-we-do-large.html, xxlarge]">
                                     
                                 </div>
 						    </div>
@@ -116,163 +126,43 @@
 				    </div>
 			    </section>
 			    
-			    <section id="customer" data-interchange="[assets/img/lego-medium.jpg, xsmall], [assets/img/lego-medium.jpg, small], [assets/img/lego-medium.jpg, medium], [assets/img/lego-large.jpg, large], [assets/img/lego-xlarge.jpg, xlarge], [assets/img/lego-xxlarge.jpg, xxlarge]">
+			    <section id="customer" data-interchange="[assets/img/lego-xsmall.jpg, xsmall], [assets/img/lego-small.jpg, small], [assets/img/lego-medium.jpg, medium], [assets/img/lego-large.jpg, large], [assets/img/lego-xlarge.jpg, xlarge], [assets/img/lego-xxlarge.jpg, xxlarge], [assets/img/lego-xxxlarge.jpg, xxxlarge], [assets/img/lego-xxxxlarge.jpg, xxxxlarge]">
 				    <div class="grid-container">
 					    <div class="grid-x grid-margin-x">
-						    <div class="cell large-6">
+						    <div class="cell xsmall-12 medium-8 large-6">
 							    <h2><span>The customer is at the heart</span><br><span>of everything we do.</span></h2>
 							    
-							    <p><strong>We solve business problems creatively</strong>.<br>Creating great ideas that engage consumers into action. Big and small ideas, tactical or strategic solutions that deliver your brand, create measurable value and return on investment.</p>
+							    <p><strong>They are the building blocks of what is created and why</strong>.<br>By adopting a channel agnostic approach we can deliver brand experiences to the right audience, at the right time, with the right message and have the capability of tracking, learning and iterating campaigns for greater success.</p>
 						    </div>
 					    </div>
 				    </div>
 			    </section>
 			    
-			    <section id="our-story" data-magellan-target="our-story" data-interchange="[assets/img/bottle-medium.jpg, xsmall], [assets/img/bottle-medium.jpg, small], [assets/img/bottle-medium.jpg, medium], [assets/img/bottle-large.jpg, large], [assets/img/bottle-large.jpg, xlarge], [assets/img/bottle-large.jpg, xxlarge]">
+			    <section id="our-story" data-magellan-target="our-story" data-interchange="[assets/img/bottle-xsmall.jpg, xsmall], [assets/img/bottle-xsmall.jpg, small], [assets/img/bottle-medium.jpg, medium], [assets/img/bottle-large.jpg, large], [assets/img/bottle-large.jpg, xlarge], [assets/img/bottle-xxlarge.jpg, xxlarge], [assets/img/bottle-xxxlarge.jpg, xxxlarge]">
 				    <div class="grid-container">
 					    <div class="grid-x grid-margin-x">
-						    <div class="cell large-6 large-offset-6">
+						    <div class="cell medium-7 medium-offset-5">
 							    <h2>The Story So Far</h2>
 							    
-							    <p>What started out as neighbours sharing a cup of sugar, a glass or three of wine, a baby sitter and a spot of dinner here and there developed into many conversations around the problems that brands face with having a lack of transparency and collaboration between creative, digital and media. So we joined forces to offer complete transparency and collaboration across the 3 offerings. We now have the capabilities of being able to deliver brands to customers and customers to brands through clever strategy and cut through creative, powered by insights, data and analytics to deliver outstanding ROI without the smoke and mirrors.</p>
+                                <p>What started out as neighbours sharing a cup of sugar, a glass or three of wine, a baby sitter and a spot of dinner here and there developed into many conversations around the problems that brands face with having a lack of transparency and collaboration between creative, digital and media. So we joined forces to offer complete transparency and collaboration across the 3 offerings. We now have the capabilities of being able to deliver brands to customers and customers to brands through clever strategy and cut through creative, powered by insights, data and analytics to deliver outstanding ROI without the smoke and mirrors.</p>
+                                
+                                <p>It's what we call Intelligent Advertising.</p>
 						    </div>
 					    </div>
 				    </div>
 			    </section>
 			    
 			    <section id="our-team" data-magellan-target="our-team">
-				    <div class="grid-container">
-					    <div class="grid-x grid-margin-x">
-						    <div class="cell large-10 large-offset-1">
-							    <h2>The Team</h2>
-							    
-							    <p><strong>OUR TEAM IS MORE LIKE A GLOBAL COMMUNITY.</strong><br>As part of our structure we always have the 3 key leads working together, every step of the way to ensure the success of a campaign is as great as it can be. We have an in-house design and production department that works collaboratively with our account managers and producers to make sure projects happen seamlessly.</p>
-						    </div>
-					    </div>
+				    <div class="grid-container" data-interchange="[the-team-xsmall.html, xsmall], [the-team-xsmall.html, small], [the-team-medium.html, medium], [the-team-large.html, large], [the-team-large.html, xlarge], [the-team-large.html, xxlarge], [the-team-large.html, xxxlarge]">
 					    
-					    <div class="grid-x grid-margin-x">
-						    <div class="cell large-12">
-							    <div id="team-slider">
-								    <div class="grid-container">
-									    <div class="grid-x grid-margin-x">
-										    <div class="cell xsmall-10 xsmall-offset-1 large-5 xlarge-6">
-											    <p><strong>SANDY RUDD -<br>PARTNER-CREATIVE STRATEGY.</strong><br>Sandy’s expertise extends 20 years, working for multi-national and local agencies in an integrated capacity on a diverse range of disciplines including: Creative Strategy, Digital, UX, Direct Marketing and digital.  A highly ‘awarded’ creative, her expertise includes creative business strategy, marketing, brand management, social and technology services. Sandy has also had hands-on management experience in creative &amp; innovation industries and sits on the board of directors for tech company, Wundar. and is also a member of the Australian China Business Council.</p>
-											    
-											    <div class="text-center">
-												    <ul class="share-navigation">
-													    <li>
-													    	<a>
-														    	<i class="fab fa-linkedin-in fa-lg"></i>
-													    	</a>
-													    </li>
-													    
-													    <li>
-													    	<a>
-														    	<i class="fab fa-twitter fa-lg"></i>
-													    	</a>
-													    </li>
-												    </ul>
-											    </div>
-										    </div>
-										    
-										    <div class="cell large-6 xlarge-5 hide-for-xsmall hide-for-small-only hide-for-medium-only">
-											    <img src="assets/img/profile-sandy.jpg">
-										    </div>
-									    </div>
-								    </div>
-								    
-								    <div class="grid-container">
-									    <div class="grid-x grid-margin-x">
-										    <div class="cell xsmall-10 xsmall-offset-1 large-5 xlarge-6">
-											    <p><strong>MATT RUDD -<br>PARTNER-CREATIVE STRATEGY.</strong><br>Sandy’s expertise extends 20 years, working for multi-national and local agencies in an integrated capacity on a diverse range of disciplines including: Creative Strategy, Digital, UX, Direct Marketing and digital.  A highly ‘awarded’ creative, her expertise includes creative business strategy, marketing, brand management, social and technology services. Sandy has also had hands-on management experience in creative &amp; innovation industries and sits on the board of directors for tech company, Wundar. and is also a member of the Australian China Business Council.</p>
-                                                
-                                                 <div class="text-center">
-												    <ul class="share-navigation">
-													    <li>
-													    	<a>
-														    	<i class="fab fa-linkedin-in fa-lg"></i>
-													    	</a>
-													    </li>
-													    
-													    <li>
-													    	<a>
-														    	<i class="fab fa-twitter fa-lg"></i>
-													    	</a>
-													    </li>
-												    </ul>
-											    </div>
-										    </div>
-										    
-										    <div class="cell large-6 xlarge-5 hide-for-xsmall hide-for-small-only hide-for-medium-only">
-											    <img src="assets/img/profile-matt.jpg">
-										    </div>
-									    </div>
-								    </div>
-								    
-								    <div class="grid-container">
-									    <div class="grid-x grid-margin-x">
-										    <div class="cell xsmall-10 xsmall-offset-1 large-5 xlarge-6">
-											    <p><strong>STEVE -<br>PARTNER-CREATIVE STRATEGY.</strong><br>Sandy’s expertise extends 20 years, working for multi-national and local agencies in an integrated capacity on a diverse range of disciplines including: Creative Strategy, Digital, UX, Direct Marketing and digital.  A highly ‘awarded’ creative, her expertise includes creative business strategy, marketing, brand management, social and technology services. Sandy has also had hands-on management experience in creative &amp; innovation industries and sits on the board of directors for tech company, Wundar. and is also a member of the Australian China Business Council.</p>
-                                                
-                                                 <div class="text-center">
-												    <ul class="share-navigation">
-													    <li>
-													    	<a>
-														    	<i class="fab fa-linkedin-in fa-lg"></i>
-													    	</a>
-													    </li>
-													    
-													    <li>
-													    	<a>
-														    	<i class="fab fa-twitter fa-lg"></i>
-													    	</a>
-													    </li>
-												    </ul>
-											    </div>
-										    </div>
-										    
-										    <div class="cell large-6 xlarge-5 hide-for-xsmall hide-for-small-only hide-for-medium-only">
-											    <img src="assets/img/profile-steve.jpg">
-										    </div>
-									    </div>
-								    </div>
-							    </div>
-							    
-							    <ul id="team-slider-control" class="clearfix">
-								    <li>
-								    	<a class="btn-goto" data-goto="0">
-									    	<img src="assets/img/profile-sandy.jpg">
-									    	
-									    	<p>Sandy Rudd<br>Creative</p>
-								    	</a>
-								    </li>
-								    
-								    <li>
-								    	<a class="btn-goto" data-goto="1">
-									    	<img src="assets/img/profile-matt.jpg">
-									    	
-									    	<p>Matt Rudd<br>Creative</p>
-								    	</a>
-								    </li>
-								    
-								    <li>
-								    	<a class="btn-goto" data-goto="2">
-									    	<img src="assets/img/profile-steve.jpg">
-									    	
-									    	<p>Steve<br>Creative</p>
-								    	</a>
-								    </li>
-							    </ul>
-						    </div>
-					    </div>
 				    </div>
 			    </section>
 			    
-			    <section id="our-partners">
+			    <section id="brand-experience">
 				    <div class="grid-container">
 					    <div class="grid-x grid-margin-x">
 						    <div class="cell xsmall-12">
-							    <h2>Our Partners</h2>
+							    <h2>Brand Experience</h2>
 						    </div>
 					    </div>
 					    
@@ -349,7 +239,11 @@
 					    </div>
 					    
 					    <div class="grid-x grid-margin-x" id="contacts">
-						    <div class="cell medium-8 large-6">
+						    <div class="cell medium-6">
+                                <div class="callout hide">
+                                    <p></p>
+                                </div>
+                                
 							    <form data-abide novalidate>
 								    <input type="text" name="name" placeholder="Name" required>
 								    
@@ -365,15 +259,33 @@
 							    </form>
 						    </div>
 						    
-						    <div class="cell medium-4 medium-offset-0 large-4 large-offset-2">
-							    <p>Sandy Rudd<br>0409 019 489</p>
-							    
-							    <p>sandy@threetofour.com.au</p>
-							    
-							    <hr>
-							    
-							    <div class="text-center">
-								    <ul class="share-navigation">
+						    <div class="cell medium-5 large-offset-1">
+                                <p>Sandy Rudd<br>0409 019 489</p>
+                                
+                                <p>hello@threetofour.com.au</p>
+                                
+                                <hr>
+                                
+                                <div class="grid-x address">
+                                    <div class="cell xsmall-12 small-6">
+                                        <p><strong>Sydney:</strong><br>
+                                        10 Boronia Street<br>
+                                        Redfern, <br class="hide-for-large">NSW 2016<br>
+                                        Australia</p>
+                                    </div>
+                                    
+                                    <div class="cell xsmall-12 small-6">
+                                        <p><strong>Melbourne:</strong><br>
+                                        Suite 702, <br class="hide-for-large">55 Queens Road<br>
+                                        Melbourne, <br class="hide-for-large">VIC 3000<br>
+                                        Australia</p>
+                                    </div>
+                                </div>
+                                
+                                <hr>
+                                
+                                <div class="text-center">
+                                    <ul class="share-navigation">
                                         <li>
                                             <a><i class="fab fa-twitter fa-2x"></i></a>
                                         </li>
@@ -386,8 +298,8 @@
                                             <a><i class="fab fa-facebook fa-2x"></i></a>
                                         </li>
                                     </ul>
-							    </div>
-						    </div>
+                                </div>
+				            </div>
 					    </div>
 				    </div>
 			    </section>

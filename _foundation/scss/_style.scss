@@ -100,19 +100,26 @@ p {
 // OFF-CANVAS NAVIGATION
 #off-canvas-navigation {
 	ul {
-		display: inline-block;
-		
-		li {
-			float: left;
+		margin: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        
+        li {
 			list-style-type: none;
+            border-bottom: 1px solid rgba($black, 0.2);
 			
 			a {
 				font-family: $bebas_bold;
-				color: $orange;
+                font-size: 24px;
+				color: rgba($black, 0.7);
+                line-height: 56px;
 				text-transform: uppercase;
-				padding-left: 15px;
-				padding-right: 15px;
+                height: 56px;
 				display: block;
+                
+                &.is-active {
+                    color: $orange;
+                }
 			}
 		}
 	}
@@ -130,20 +137,20 @@ p {
         float: left;
     }
 }
-    
-    
-    
-section {
-    border-top: 1px solid rgba($black, 0.1);
-}
 
 
 
 // HERO IMAGE
+#coming-soon {
+    #hero-image {
+        padding-top: 0;
+    }
+}
+    
 #hero-image {
 	width: 100%;
 	height: 100vh;
-	padding-top: 80px;
+	padding-top: 112px;
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -158,53 +165,89 @@ section {
 	    flex-direction: column;
 	    justify-content: center;
 	    align-content: center;
+        
+        .grid-x {
+            @include breakpoint(xsmall) {
+                justify-content: flex-end;
+            }
+
+            @include breakpoint(medium) {
+                justify-content: center;
+            }
+            
+        }
 	}
     
     .container {
-        display: inline-block;
-        border: 1px solid $white;
-        padding: 15px;
-        
-        img {
-            float: left;
-            padding-right: 15px;
-            border-right: 1px solid $white;
-            
-            @include breakpoint(xsmall) {
-                width: 80px;
-                margin-top: 12px;
-            }
-            
-            @include breakpoint(medium) {
-                width: 149px;
-            }
-            
-            @include breakpoint(large) {
-                margin-top: 0;   
-            }
+        @include breakpoint(xsmall) {
+            margin-right: 10px;
+        }
+
+        @include breakpoint(medium) {
+            margin-right: 0;
         }
         
-        p {
-            font-family: $bebas_bold;
+        h3 {
             color: $white;
-            line-height: 1;
-            margin-top: 3px;
-            margin-bottom: 0;
-            padding-left: 15px;
-            float: left;
-            
+        }
+
+        .box {
+            display: inline-block;
+            border: 1px solid $white;
+
             @include breakpoint(xsmall) {
-                font-size: 24px;
-                margin-top: 0;
+                padding: 10px;
             }
-            
+
             @include breakpoint(medium) {
-               font-size: 42px;
-                margin-top: 16px;
+                padding: 15px;
             }
-            
-            @include breakpoint(medium) {
-                margin-top: 4px;
+
+            img {
+                float: left;
+
+                @include breakpoint(xsmall) {
+                    margin-right: 10px;
+                    margin-top: 0;
+                }
+                
+                @include breakpoint(small) {
+                    margin-top: 2px;
+                }
+
+                @include breakpoint(medium) {
+                    margin-right: 15px;
+                    margin-top: 0;
+                }
+            }
+
+            p {
+                font-family: $bebas_bold;
+                color: $white;
+                line-height: 1;
+                margin-bottom: 0;
+                float: left;
+                border-left: 1px solid $white;
+
+                @include breakpoint(xsmall) {
+                    font-size: 18px;
+                    padding-left: 10px;
+                    padding-top: 6px;
+                    padding-bottom: 4px;
+                }
+                
+                @include breakpoint(small) {
+                    font-size: 21px;
+                    padding-top: 0px;
+                    padding-bottom: 2px;
+                }
+
+                @include breakpoint(medium) {
+                    font-size: 28px;
+                    padding-left: 15px;
+                    padding-top: 14px;
+                    padding-bottom: 11px;
+                }
             }
         }
     }
@@ -237,17 +280,80 @@ section {
 				}
 			}
 		}
+        
+        .tabs-title {
+            opacity: 1 !important;
+            
+            &:nth-child(1) {
+                transition-delay: 0.875s;
+                
+                img {
+                    opacity: 1 !important;
+                    transition-delay: 1s;
+                }
+                
+                span {
+                    opacity: 1 !important;
+                    transition-delay: 1.125s;
+                }
+            }
+
+            &:nth-child(2) {
+                transition-delay: 1.125s;
+                
+                img {
+                    opacity: 1 !important;
+                    transition-delay: 1.25s;
+                }
+                
+                span {
+                    opacity: 1 !important;
+                    transition-delay: 1.375s;
+                }
+            }
+
+            &:nth-child(3) {
+                transition-delay: 1.375s;
+                
+                img {
+                    opacity: 1 !important;
+                    transition-delay: 1.5s;
+                }
+                
+                span {
+                    opacity: 1 !important;
+                    transition-delay: 1.625s;
+                }
+            }
+            
+            &:nth-child(4) {
+                transition-delay: 1.625s;
+                
+                img {
+                    opacity: 1 !important;
+                    transition-delay: 1.75s;
+                }
+                
+                span {
+                    opacity: 1 !important;
+                    transition-delay: 1.875s;
+                }
+            }
+        }
 	}
 	
 	h2 {
-		margin-bottom: 40px;
-		
-        @include breakpoint(xsmall) {
-           font-size: 30px;
+		@include breakpoint(xsmall) {
+            font-size: 30px;
+            margin-bottom: 16px;
         }
         
         @include breakpoint(medium) {
            font-size: 40px;
+        }
+        
+        @include breakpoint(large) {
+           margin-bottom: 40px;
         }
         
         br {
@@ -263,10 +369,10 @@ section {
 		span {
 			transition-duration: 1s;
 			transition-property: all;
+            opacity: 0;
             
             @include breakpoint(xsmall) {
                 display: inline;
-                opacity: 1;
                 transform: translateY(0);
             }
             
@@ -280,14 +386,14 @@ section {
             }
 		}
 	}
-	
-	.tab-container {
+    
+    .tab-container {
 		background-color: $orange;
 		width: 100%;
         
         @include breakpoint(xsmall) {
-            padding-top: 32px;
-            padding-bottom: 32px;
+            padding-top: 0;
+            padding-bottom: 0;
         }
         
         @include breakpoint(large) {
@@ -295,67 +401,45 @@ section {
             padding-bottom: 96px;
         }
 	}
-    
-    .accordion {
-        margin-bottom: 0;
-        background-color: $cream;
-        
-        .accordion-title {
-            font-family: $bebas_bold;
-            font-size: 24px;
-            color: $orange;
-            text-align: center;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 16px;
-            padding-bottom: 10px;
-            border: none;
-            
-            &:before {
-                display: none;
-            }
-            
-            &:hover {
-                background-color: $cream;
-            }
-            
-            img {
-                margin-bottom: 14px;
-            }
-            
-            span {
-                width: 100%;
-                display: block;
-            }
-        }
-        
-        .accordion-content {
-            background-color: $cream;
-            padding-top: 10px;
-            padding-bottom: 11px;
-            border: none;
-            border-bottom: 1px solid rgba($black, 0.2);
-            
-            p {
-                color: $orange;
-            }
-        }
-    }
 	
 	.tabs {
-		background-color: transparent;
 		margin-left: -15px;
 		margin-right: -15px;
 		padding: 0;
 		border: none;
+        
+        @include breakpoint(xsmall) {
+            background-color: $cream;
+        }
 		
-		.tabs-title {
-			width: 25%;
-			padding-left: 15px;
-			padding-right: 15px;
-			float: left;
+        @include breakpoint(large) {
+            background-color: transparent;
+        }
+        
+        .tabs-title {
 			border: none;
+            transition-duration: 1s;
+			transition-property: all;
+            opacity: 0;
 			
+            @include breakpoint(xsmall) {
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+                float: none;
+            }
+            
+            @include breakpoint(small) {
+                width: 50%;
+                padding-left: 15px;
+                padding-right: 15px;
+                float: left;
+            }
+
+            @include breakpoint(large) {
+                width: 25%;
+            }
+            
 			&.is-active {
 				a {
 					border: none;
@@ -377,22 +461,99 @@ section {
                 
                 img {
                     margin-bottom: 19px;
+                    transition-duration: 1s;
+                    transition-property: all;
+                    opacity: 0;
                 }
                 
                 span {
                     width: 100%;
                     display: block;
+                    transition-duration: 1s;
+                    transition-property: all;
+                    opacity: 0;
                 }
 			}
 		}
 	}
+    
+    .accordion-container {
+        margin-left: -15px;
+        margin-right: -15px;
+        
+        .accordion {
+            background-color: transparent;
+            width: 25%;
+            border: none;
+            float: left;
+
+            .accordion-item {
+                background-color: transparent;
+                border: none;
+
+                .accordion-content {
+                    background-color: transparent;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    display: block;
+                    border: none;
+
+                    .box {
+                        background-color: $cream;
+                        padding-top: 0;
+                        padding-bottom: 9px;
+
+                        p {
+                            color: $orange;
+                            text-align: center;
+                            margin-top: -2px;
+                            padding-left: 15px;
+                            padding-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.is-activated {
+            .accordion-item {
+                .accordion-content {
+                    display: none;
+                }
+            }
+        }
+    }
 	
 	.tabs-content {
 		background-color: transparent;
 		margin-left: -15px;
 		margin-right: -15px;
 		border: none;
-		
+        
+        &.activated {
+            .tabs-panel {
+                display: none;
+                
+                &.is-active {
+                    display: block;
+                }
+                
+                .box {
+                    .mask {
+                        height: 0;
+                        
+                        .holder {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+        
 		.tabs-panel {
 			background-color: transparent;
 			width: 25%;
@@ -400,6 +561,8 @@ section {
 			padding-right: 15px;
 			padding-top: 0;
 			padding-bottom: 0;
+            display: block;
+            float: left;
 			
 			&:nth-child(1) {
 				margin-left: 0;
@@ -416,16 +579,44 @@ section {
 			&:nth-child(4) {
 				margin-left: 75%;
 			}
+            
+            &.is-active {
+                .box {
+                    .mask {
+                        height: 460px;
+                    }
+                }
+            }
 			
 			.box {
-				background-color: $cream;
-				padding-left: 15px;
-				padding-right: 15px;
-				padding-top: 16px;
-				padding-bottom: 16px;
+				position: relative;
+                
+                .mask {
+                    background-color: $cream;
+                    overflow-y: hidden;
+                    width: 100%;
+                    height: auto;
+                    position: relative;
+                    transition-duration: 1s;
+                    transition-property: all;
+                    
+                    .holder {
+                        height: auto;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        padding-top: 16px;
+                        padding-bottom: 16px;
+                        position: relative;
+                    }
+                }
 				
 				p {
+                    font-size: 15px;
 					color: $orange;
+                    
+                    strong {
+                        font-size: 16px;
+                    }
 				}
 			}
 		}
@@ -442,23 +633,31 @@ section {
 	padding-top: 120px;
     
     @include breakpoint(xsmall) {
+        background-size: contain;
+        background-position: right bottom;
         min-height: 100vh
     }
     
-    @include breakpoint(xsmall) {
-        background-size: contain;
-        background-position: right bottom;
+    @include breakpoint(medium) {
+        background-size: auto;
+        background-position: right top;
+        min-height: 66.67vh;
     }
     
     @include breakpoint(large) {
-        background-position: 100% 0;
-        background-size: auto;
+        background-position: 0 0;
+        background-size: cover;
+        min-height: 100vh;
     }
-
+    
     @include breakpoint(xlarge) {
-        min-height: 900px;
+        min-height: 75vh;
     }
-	
+    
+    @include breakpoint(xxxxlarge) {
+        min-height: 66.67vh;
+    }
+    
 	&.is-in-view {
 		h2 {
 			span {
@@ -495,16 +694,15 @@ section {
 		
 		span {
 			display: inline-block;
+            opacity: 0;
 			transition-duration: 1s;
 			transition-property: all;
             
             @include breakpoint(xsmall) {
-                opacity: 1;
                 transform: translateY(0);
             }
 
             @include breakpoint(large) {
-                opacity: 0;
                 transform: translateY(32px);
             }
 		}
@@ -516,12 +714,10 @@ section {
 		transition-property: all;
         
         @include breakpoint(xsmall) {
-            opacity: 1;
             transform: translateY(0);
         }
 
         @include breakpoint(large) {
-            opacity: 0;
             transform: translateY(32px);
         }
 	}
@@ -529,7 +725,7 @@ section {
 
 
 
-// CUSTOMER
+// OUR STORY
 #our-story {
     background-color: $cream;
     background-repeat: no-repeat;
@@ -542,14 +738,26 @@ section {
         min-height: calc(100vh);
     }
     
-    @include breakpoint(large) {
-        background-position: 0 256px;
+    @include breakpoint(medium) {
         background-size: cover;
-        min-height: calc(100vh + 320px);
     }
-	
+    
+    @include breakpoint(large) {
+        background-position: 0 224px;
+        min-height: 100vh;
+    }
+    
     @include breakpoint(xlarge) {
-        min-height: calc(100vh + 480px);
+        background-position: 0 128px;
+        min-height: 100vh;
+    }
+    
+    @include breakpoint(xxlarge) {
+        background-position: 0 192px;
+    }
+    
+    @include breakpoint(xxxlarge) {
+        background-position: 0 128px;
     }
     
 	&.is-in-view {
@@ -568,34 +776,37 @@ section {
 	
 	h2 {
 		margin-bottom: 14px;
+        opacity: 0;
 		transition-duration: 1s;
 		transition-property: all;
         
         @include breakpoint(xsmall) {
             font-size: 48px;
-            opacity: 1;
             transform: translateY(0);
         }
         
         @include breakpoint(medium) {
             font-size: 56px;
-            opacity: 1;
             transform: translateY(0);
         }
 
         @include breakpoint(large) {
-            opacity: 0;
             transform: translateY(32px);
         }
 	}
 	
 	p {
+        opacity: 0;
 		transition-duration: 1s;
 		transition-property: all;
         
         &:last-child {
             @include breakpoint(xsmall) {
-                margin-bottom: 256px;
+                margin-bottom: 128px;
+            }
+            
+            @include breakpoint(small) {
+                margin-bottom: 240px;
             }
             
             @include breakpoint(medium) {
@@ -604,12 +815,10 @@ section {
         }
         
         @include breakpoint(xsmall) {
-            opacity: 1;
             transform: translateY(0);
         }
 
         @include breakpoint(large) {
-            opacity: 0;
             transform: translateY(32px);
         }
 	}
@@ -642,6 +851,23 @@ section {
 				transition-delay: 0.375s;
 			}
 		}
+        
+        .accordion-item {
+            opacity: 1 !important;
+            
+            &:nth-child(1) {
+                transition-delay: 0.625s;
+            }
+
+            &:nth-child(2) {
+                transition-delay: 0.875s;
+            }
+            
+            &:nth-child(3) {
+                transition-delay: 1.125s;
+            }
+        }
+            
 		
 		#team-slider {
 			opacity: 1;
@@ -690,6 +916,147 @@ section {
             }
 		}
 	}
+    
+    .accordion {
+        margin-bottom: 0;
+        background-color: $cream;
+        
+        .accordion-item {
+            opacity: 0;
+            transition-duration: 1s;
+			transition-property: all;
+            
+            &.is-active {
+                .accordion-title {
+                    &:after {
+                        opacity: 1;
+                        transition-delay: 0.375s;
+                        transition-duration: 1s;
+                    }
+                    
+                    p {
+                        opacity: 1;
+                        transition-delay: 0.625s;
+                        transition-duration: 1s;
+                    }
+                    
+                    span {
+                        &.trigger {
+                            opacity: 0;
+                            transition-delay: 0s;
+                            transition-duration: 0.375s;
+                        }
+                    }
+                }
+            }
+            
+            .accordion-title {
+                font-family: $bebas_bold;
+                color: $orange;
+                text-align: center;
+                padding: 0;
+                display: block;
+                border: none;
+                position: relative;
+
+                &:before {
+                    display: none;
+                }
+
+                &:after {
+                    content: "";
+                    background-color: rgba($black, 0.4);
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                    transition-delay: 0.25s;
+                    transition-property: all;
+                }
+
+                &:hover {
+                    background-color: $cream;
+                }
+
+                img {
+                    position: relative;
+                }
+
+                p {
+                    font-family: $bebas_bold;
+                    font-size: 24px;
+                    color: $white;
+                    text-align: center;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 2;
+                    opacity: 0;
+                    transition-delay: 0;
+                    transition-duration: 1s;
+                    transition-property: all;
+                }
+                
+                span {
+                    &.trigger {
+                        color: $white;
+                        display: block;
+                        position: absolute;
+                        left: 50%;
+                        bottom: 24px;
+                        opacity: 1;
+                        z-index: 3;
+                        transform: translateX(-50%);
+                        transition-delay: 0.75s;
+                        transition-duration: 1s;
+                        transition-property: all;
+                    }
+                }
+            }
+
+            .accordion-content {
+                background-color: $cream;
+                padding-top: 10px;
+                padding-bottom: 11px;
+                border: none;
+                border-bottom: 1px solid rgba($black, 0.2);
+                
+                .share-navigation {
+                    margin-bottom: 0 !important;
+
+                    @include breakpoint(large) {
+                        margin-top: 11px;
+                    }
+
+                    @include breakpoint(xlarge) {
+                        margin-top: 27px;
+                    }
+
+                    li {
+                        a {
+                            color: $white;
+                            background-color: $gray;
+                            width: 40px;
+                            height: 40px;
+                            display: block;
+                            border-radius: 50%;
+                            position: relative;
+
+                            i {
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 	
 	#team-slider {
 		background-color: $white;
@@ -735,8 +1102,8 @@ section {
              display: none !important;
             }
             
-            @include breakpoint(medium) {
-             display: block;
+            @include breakpoint(large) {
+                display: block !important;
             }
 		}
 		
@@ -801,6 +1168,24 @@ section {
             @include breakpoint(large) {
                 width: 25%;
             }
+            
+            &.is-active {
+                a {
+                    &:before {
+                        opacity: 1;
+                    }
+                    
+                    &:hover {
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                    
+                    p {
+                        opacity: 1;
+                    }
+                }
+            }
 			
 			a {
 				background-color: $white;
@@ -810,7 +1195,7 @@ section {
 				
 				&:before {
 					content: "";
-					background-color: rgba($black, 0.5);
+					background-color: rgba($black, 0.4);
 					width: 100%;
 					height: 100%;
 					position: absolute;
@@ -859,8 +1244,8 @@ section {
 
 
 
-// OUR PARTNERS
-#our-partners {
+// BRAND EXPERIENCE
+#brand-experience {
 	background-color: $orange;
 	width: 100%;
 	padding-top: 117px;
@@ -1006,7 +1391,14 @@ section {
 	background-color: $gray;
 	width: 100%;
 	padding-top: 117px;
-	padding-bottom: 96px;
+	
+    @include breakpoint(xsmall) {
+        padding-bottom: 96px;
+    }
+
+    @include breakpoint(medium) {
+        padding-bottom: 48px;
+    }
 	
 	&.is-in-view {
 		h2 {
@@ -1046,8 +1438,12 @@ section {
     p {
         color: $white;
         
+        &:first-child {
+            margin-top: -6px;
+        }
+        
         &+ hr {
-            margin-top: 42px;
+            margin-top: 18px;
         }
     }
     
@@ -1056,6 +1452,14 @@ section {
         margin: 0;
         border: none;
         border-top: 1px solid rgba($white, 0.5);
+        
+        &+ .grid-x {
+            margin-top: 24px;
+            
+            &+ hr {
+                margin-top: 2px;
+            }
+        }
     }
     
     #contacts {
@@ -1091,6 +1495,7 @@ section {
 			color: $white;
 			text-transform: uppercase;
 			background-color: $gray;
+            margin-bottom: 48px;
 			padding-left: 30px;
 			padding-right: 30px;
 			padding-top: 7px;
@@ -1104,9 +1509,44 @@ section {
 			}
 		}
 	}
+    
+    .address {
+        .cell
+        {
+            @include breakpoint(xsmall) {
+                &:first-child {
+                    padding-right: 0;
+                }
+                
+                &:last-child {
+                    padding-left: 0;
+                }
+            }
+            
+            @include breakpoint(small) {
+                &:first-child {
+                    padding-right: 5px;
+                }
+                
+                &:last-child {
+                    padding-left: 5px;
+                }
+            }
+            
+            @include breakpoint(large) {
+                &:first-child {
+                    padding-right: 0;
+                }
+                
+                &:last-child {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
 	
 	.share-navigation {
-	    margin-top: 46px;
+	    margin-top: 22px;
 	    
 	    li {
 	        a {
