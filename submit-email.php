@@ -33,21 +33,24 @@
 
 	$mail->setFrom('no-spam@threetofour.com.au', 'ThreeToFour website mailer');
 
-	//$mail->addAddress('jay@damonxlabs.com');
-	//$mail->addAddress('amber@damonxlabs.com');
-	$mail->addAddress('no-spam@threetofour.com.au');
+	$mail->addAddress('hello@threetofour.com.au');
     $mail->addReplyTo($_POST['email'], $_POST['name']);
-	//$email = $_POST['email'];
 
 	$mail->Subject = 'new message from ' . $_POST['name'];
 	$mail->Body = $_POST['message'];
 
 	if($mail->send()) {
-		$return['success'] = 1;
+		$return = array(
+            'success' => "1",
+            'message' => "Your email has been sent."
+            );
+        
 	}
 	else{
-		$return['success'] = 0;
-		$return['errorinfo'] = $mail->ErrorInfo;
+        $return = array(
+            'success' => "0",
+            'message' => $mail->ErrorInfo
+            );
 	}
 	// $return['success'] = 1;
 	echo json_encode($return);

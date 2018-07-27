@@ -21,6 +21,24 @@ h2 {
 
 p {
 	font-family: $lato;
+    
+    @include breakpoint(xsmall) {
+        font-size: 17px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: 1.9;
+        
+        strong {
+            line-height: 1.2;
+        }
+    }
+
+    @include breakpoint(large) {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.6;
+        justify-content: center;
+    }
 }
 
 
@@ -39,36 +57,181 @@ p {
     
     button {
         color: $orange;
+        width: 24px;
+        height: 20px;
         position: absolute;
-        right: 10px;
+        right: 15px;
         top: 50%;
         transform: translateY(-50%);
+        
+        &:before, &:after {
+            content: "";
+            background-color: $orange;
+            width: 24px;
+            height: 4px;
+            display: block;
+            opacity: 1;
+            position: absolute;
+            left: 0;
+            transition-delay: 0.25s;
+            transition-duration: 0.5s;
+            transition-property: all;
+        }
+        
+        &:before {
+            top: 0;
+        }
+        
+        &:after {
+            bottom: 0;
+        }
+        
+        span {
+            background-color: $orange;
+            width: 24px;
+            height: 4px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            transform-origin: center center;
+            transform: rotate(0);
+            transition-delay: 0s;
+            transition-duration: 0.5s;
+            transition-property: all;
+        }
+        
+        &.is-open {
+            &:before, &:after {
+                opacity: 0;
+                transition-delay: 0s;
+            }
+            
+            span {
+                transition-delay: 0.25s;
+                
+                &:first-child {
+                    transform: rotate(45deg);
+                }
+                
+                &:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
     }
 }
 
 // MAIN NAVIGATION
 #main-navigation {
-	margin-top: 36px;
-	margin-bottom: -1px;
+    
+    @include breakpoint(xsmall) {
+        background: $white;
+        width: 100%;
+        height: calc(100vh - 112px);
+        margin-top: 0;
+        margin-bottom: 0;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 112px;
+        transition-delay: 0s;
+        transition-duration: 0s;
+        transition-property: all;
+    }
+    
+    @include breakpoint(large) {
+        background-color: transparent;
+        margin-top: 36px;
+        margin-bottom: -1px;
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        left: auto;
+        right: auto;
+        width: auto;
+        height: auto;
+        transition: none;
+    }
 	
+    &.is-open {
+        @include breakpoint(xsmall) {
+            visibility: visible;
+            opacity: 1;
+            transition-duration: 1s;
+        }
+        
+        @include breakpoint(large) {
+            opacity: 1;
+            transition-duration: 0s;
+        }
+        
+        ul {
+            @include breakpoint(xsmall) {
+                opacity: 1;
+                transition-delay: 0.25s;
+                transition-duration: 1s;
+            }
+        }
+    }
+    
 	ul {
 		margin-left: 0;
 		margin-bottom: 0;
-		display: inline-block;
+        
+        @include breakpoint(xsmall) {
+            display: block;
+            opacity: 0;
+            transition-duration: 0s;
+            transition-property: all;
+        }
+        
+        @include breakpoint(large) {
+            display: inline-block;
+            opacity: 1;
+            transition: none;
+        }
 		
 		li {
-			margin-left: 15px;
-			margin-right: 15px;
-			float: left;
-			list-style-type: none;
+            list-style-type: none;
+            
+            @include breakpoint(xsmall) {
+                margin-left: 15px;
+                margin-right: 15px;
+                float: none;
+            }
+            
+            @include breakpoint(large) {
+                margin-left: 15px;
+                margin-right: 15px;
+                float: left;
+            }
 			
 			a {
 				font-family: $bebas_bold;
-				font-size: 24px;
-				color: $orange;
 				text-transform: uppercase;
 				display: block;
 				position: relative;
+                
+                @include breakpoint(xsmall) {
+                    font-size: 36px;
+                    color: $black;
+                    text-align: center;
+                }
+
+                @include breakpoint(large) {
+                    font-size: 24px;
+                    color: $orange;
+                    text-align: left;
+                }
+                
+                &.is-active {
+                    @include breakpoint(xsmall) {
+                        color: $orange;
+                    }
+                }
 				
 				&.is-active, &:hover {
 					&:before {
@@ -91,6 +254,14 @@ p {
 					transition-delay: 0;
 					transition-duration: 0.5s;
 					transition-property: all;
+                    
+                    @include breakpoint(xsmall) {
+                        display: none;
+                    }
+                    
+                    @include breakpoint(large) {
+                        display: block;
+                    }
 				}
 			}
 		}
@@ -101,8 +272,8 @@ p {
 #off-canvas-navigation {
 	ul {
 		margin: 0;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
         
         li {
 			list-style-type: none;
@@ -180,7 +351,7 @@ p {
     
     .container {
         @include breakpoint(xsmall) {
-            margin-right: 10px;
+            margin-right: 15px;
         }
 
         @include breakpoint(medium) {
@@ -403,12 +574,12 @@ p {
 	}
 	
 	.tabs {
-		margin-left: -15px;
-		margin-right: -15px;
 		padding: 0;
 		border: none;
         
         @include breakpoint(xsmall) {
+            margin-left: -20px;
+            margin-right: -20px;
             background-color: $cream;
         }
 		
@@ -424,15 +595,17 @@ p {
 			
             @include breakpoint(xsmall) {
                 width: 100%;
-                padding-left: 10px;
-                padding-right: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
                 float: none;
             }
             
             @include breakpoint(small) {
                 width: 50%;
-                padding-left: 15px;
-                padding-right: 15px;
+                float: left;
+            }
+            
+            @include breakpoint(medium) {
                 float: left;
             }
 
@@ -478,8 +651,8 @@ p {
 	}
     
     .accordion-container {
-        margin-left: -15px;
-        margin-right: -15px;
+        margin-left: -20px;
+        margin-right: -20px;
         
         .accordion {
             background-color: transparent;
@@ -493,8 +666,8 @@ p {
 
                 .accordion-content {
                     background-color: transparent;
-                    padding-left: 15px;
-                    padding-right: 15px;
+                    padding-left: 20px;
+                    padding-right: 20px;
                     padding-top: 0;
                     padding-bottom: 0;
                     display: block;
@@ -509,8 +682,8 @@ p {
                             color: $orange;
                             text-align: center;
                             margin-top: -2px;
-                            padding-left: 15px;
-                            padding-right: 15px;
+                            padding-left: 20px;
+                            padding-right: 20px;
                         }
                     }
                 }
@@ -528,8 +701,8 @@ p {
 	
 	.tabs-content {
 		background-color: transparent;
-		margin-left: -15px;
-		margin-right: -15px;
+		margin-left: -20px;
+		margin-right: -20px;
 		border: none;
         
         &.activated {
@@ -557,8 +730,8 @@ p {
 		.tabs-panel {
 			background-color: transparent;
 			width: 25%;
-			padding-left: 15px;
-			padding-right: 15px;
+			padding-left: 20px;
+			padding-right: 20px;
 			padding-top: 0;
 			padding-bottom: 0;
             display: block;
@@ -602,8 +775,8 @@ p {
                     
                     .holder {
                         height: auto;
-                        padding-left: 15px;
-                        padding-right: 15px;
+                        padding-left: 20px;
+                        padding-right: 20px;
                         padding-top: 16px;
                         padding-bottom: 16px;
                         position: relative;
@@ -715,6 +888,11 @@ p {
         
         @include breakpoint(xsmall) {
             transform: translateY(0);
+            margin-bottom: 240px;
+        }
+        
+        @include breakpoint(medium) {
+            margin-bottom: 0;
         }
 
         @include breakpoint(large) {
@@ -865,6 +1043,10 @@ p {
             
             &:nth-child(3) {
                 transition-delay: 1.125s;
+            }
+            
+            &:nth-child(4) {
+                transition-delay: 1.375s;
             }
         }
             
@@ -1060,8 +1242,6 @@ p {
 	
 	#team-slider {
 		background-color: $white;
-		margin-left: -10px;
-		margin-right: -10px;
 		transition-duration: 1s;
 		transition-property: all;
         
@@ -1071,6 +1251,20 @@ p {
 
         @include breakpoint(large) {
             opacity: 0;
+        }
+        
+        .grid-x {
+            .cell {
+                &:first-child {
+                    @include breakpoint(xsmall) {
+                        padding-right: 0
+                    }
+
+                    @include breakpoint(large) {
+                        padding-right: 15px;
+                    }
+                }
+            }
         }
 		
 		p {
@@ -1140,8 +1334,8 @@ p {
 	}
 	
 	#team-slider-control {
-		margin-left: -15px;
-		margin-right: -15px;
+		margin-left: -5px;
+		margin-right: -5px;
 		margin-top: 10px;
 		margin-bottom: 0;
 		list-style-type: none;
@@ -1162,10 +1356,6 @@ p {
 			float: left;
             
             @include breakpoint(xsmall) {
-                width: 33.33%;
-            }
-            
-            @include breakpoint(large) {
                 width: 25%;
             }
             
@@ -1222,7 +1412,6 @@ p {
 				
 				p {
 					font-family: $bebas_bold;
-					font-size: 24px;
 					color: $white;
 					line-height: 1;
 					text-align: center;
@@ -1236,6 +1425,14 @@ p {
 					transition-duration: 1s;
 					transition-property: all;
 					z-index: 1;
+                    
+                    @include breakpoint(medium) {
+                       font-size: 20px;
+                    }
+                    
+                    @include breakpoint(large) {
+                        font-size: 24px;
+                    }
 				}
 			}
 		}
@@ -1504,7 +1701,7 @@ p {
 			cursor: pointer;
 			
 			i {
-				margin-right: 10px;
+				margin-right: 15px;
 				display: none !important;
 			}
 		}

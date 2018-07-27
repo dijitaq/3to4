@@ -155,7 +155,7 @@ $('form').submit(function(ev) {
         	response=JSON.parse(response);
         	
         	if (response) {
-	        	thisForm.find('.callout').removeClass('hide');
+	        	thisForm.parent().find('.callout').removeClass('hide');
 	        	thisForm.removeClass('sending');
 		        thisForm.find('input').attr('disabled', false).val('').prop('checked', false);
                 thisForm.find('textarea').attr('disabled', false).val('').prop('checked', false);
@@ -163,13 +163,44 @@ $('form').submit(function(ev) {
 		      
                 console.log(response.message);
                 
-	        	if (response.success == 1) {
-		        	thisForm.find('.callout').addClass('success').find('p').text(response.message);
+	        	if (response.success == "1") {
+		        	thisForm.parent().find('.callout').addClass('success').find('p').text(response.message);
 		        	
 				} else {
-					thisForm.find('.callout').addClass('alert').find('p').text(response.message);
+					thisForm.parent().find('.callout').addClass('alert').find('p').text(response.message);
 				}
 			}
         }
 	});
+});
+
+
+//
+$(document).on('click touchstart', function(e) {
+    $('#trigger-navigation').removeClass('is-open');
+    
+    $('#main-navigation').removeClass('is-open');
+});
+
+
+//
+$('#trigger-navigation').on('click touchstart', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    
+    $(this).toggleClass('is-open');
+    
+    $('#main-navigation').toggleClass('is-open');
+});
+
+$('#main-navigation').find('a').on('click touchstart', function(e) {
+    e.preventDefault();
+    
+    var id = $(this).attr('href');
+    
+    $('#trigger-navigation').toggleClass('is-open');
+    
+    $('#main-navigation').toggleClass('is-open');
+    
+    $('#main-navigation').foundation('scrollToLoc', $(id));
 });
