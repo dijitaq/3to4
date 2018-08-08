@@ -931,11 +931,11 @@ p {
     }
     
     @include breakpoint(xxlarge) {
-        background-position: 0 192px;
+        background-position: 0 320px;
     }
     
     @include breakpoint(xxxlarge) {
-        background-position: 0 128px;
+        background-position: 0 192px;
     }
     
 	&.is-in-view {
@@ -1669,6 +1669,13 @@ p {
 
         @include breakpoint(large) {
             opacity: 0;
+        }
+    }
+    
+    .callout {
+        p {
+            color: $black;
+            text-align: center;
         }
     }
 	

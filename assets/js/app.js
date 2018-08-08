@@ -61,7 +61,7 @@ $(document).ready(function(){
         // our story section
         var tween_3 = new TimelineMax()
         .add([
-            TweenMax.to('#our-story', 1, { backgroundPosition: "0 -200px", force3D:true, ease: Linear.easeNone })
+            TweenMax.to('#our-story', 1, { backgroundPosition: "0 -150px", force3D:true, ease: Linear.easeNone })
         ]);
         
         scene_3.setTween(tween_3);

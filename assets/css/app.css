@@ -10569,10 +10569,10 @@ p {
       min-height: 100vh; } }
   @media screen and (min-width: 90em) {
     #our-story {
-      background-position: 0 192px; } }
+      background-position: 0 320px; } }
   @media screen and (min-width: 120em) {
     #our-story {
-      background-position: 0 128px; } }
+      background-position: 0 192px; } }
   #our-story.is-in-view h2 {
     opacity: 1;
     -ms-transform: translateY(0);
@@ -11038,6 +11038,9 @@ p {
     @media print, screen and (min-width: 60em) {
       #contact-us #contacts {
         opacity: 0; } }
+  #contact-us .callout p {
+    color: #0a0a0a;
+    text-align: center; }
   #contact-us form.sending i {
     display: inline-block !important; }
   #contact-us form [type="text"], #contact-us form [type="email"], #contact-us form textarea {

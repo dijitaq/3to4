@@ -163,6 +163,14 @@ $('#team-slider').slick({
     prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
     nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
 });
+    
+$('#team-slider').on('afterChange', function(){
+    var current = $('#team-slider').slick('slickCurrentSlide');
+    
+    $('#team-slider-control').find('li:not(:nth-child(' + (current + 1) + '))').removeClass("is-active");
+    
+    $('#team-slider-control').find('li:nth-child(' + (current + 1)  +')').addClass("is-active");
+});
 
 $('.btn-goto').on('click touchstart', function(e) {
     e.preventDefault();
